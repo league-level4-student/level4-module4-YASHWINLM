@@ -15,19 +15,35 @@ package _01_introduction_to_encapsulation;
  * 
  * */
 
+	
+
 
 public class EncapsulateTheData {
+	
 	//1. Encapsulate the member variables.
 	//   Add restrictions to the setters according to the comment.
 	
 	//2. Create a new JUnit Test case and write tests to verify that 
 	//   the member variables' getters and setters are working
 	
-	int itemsReceived; //must not be negative. All negative arguments get set to 0.
-	float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
-	String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
-	Object memberObj; //can be any object type except String. Strings get turned into objects.
+	private int itemsReceived; //must not be negative. All negative arguments get set to 0.
+	private float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
+	private String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
+	private Object memberObj; //can be any object type except String. Strings get turned into objects.
 	
+public int getItemsRecieved() {
+		
+		return itemsReceived;
+	}
+	
+public void setItemsReceived(int itemsReceived) {
+	if (itemsReceived<1) {
+		itemsReceived=0;
+	}
+	this.itemsReceived=itemsReceived;
+}
+
+
 	public static void main(String[] args) {
 		
 	}

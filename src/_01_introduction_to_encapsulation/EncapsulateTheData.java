@@ -1,5 +1,12 @@
 package _01_introduction_to_encapsulation;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+import junit.framework.Assert;
+
 /*
  * Encapsulation is a way of protecting the data in a class from being
  * unintentionally altered from another class.
@@ -40,8 +47,52 @@ public void setItemsReceived(int itemsReceived) {
 	if (itemsReceived<1) {
 		itemsReceived=0;
 	}
+	 
 	this.itemsReceived=itemsReceived;
 }
+public float getDegreesTurned() {
+	 
+	return degreesTurned;
+ }
+ public void setDegreesTurned(float degreesTurned) {
+	 
+	 if(degreesTurned<0.0 || degreesTurned>36.0) {
+		 degreesTurned=0;
+		 
+	 }
+	 this.degreesTurned=degreesTurned;
+	 
+ }
+ 
+ public String getNomenclature() {
+	 
+	 return nomenclature;
+ }
+ public void setNomenclature(String nomenclature) {
+	 if(nomenclature.equals("")) {
+		 
+		 nomenclature=" ";
+	 }
+	 this.nomenclature=nomenclature;
+	 
+ }
+
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testMethod1() {
+		setItemsReceived(-1);
+		assertEquals(0,getItemsRecieved());
+		
+		setDegreesTurned(-1);
+		assertEquals(0,getDegreesTurned());
+		
+		setNomenclature("");
+		Assert.assertEquals(" ", getNomenclature());
+
+		
+	}
+
+
 
 
 	public static void main(String[] args) {
